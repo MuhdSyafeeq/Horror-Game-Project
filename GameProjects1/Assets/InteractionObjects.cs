@@ -9,7 +9,11 @@ public class InteractionObjects : MonoBehaviour
 
     private bool showInteractMsg;
     private GUIStyle guiStyle;
-    private string msg;
+    public string msg;
+
+    public ActionObjects actObj;
+    public GameObject theHitObj;
+    public GameObject hands;
 
     void Start()
     {
@@ -20,29 +24,37 @@ public class InteractionObjects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        showInteractMsg = false;
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
+            theHitObj = hit.collider.gameObject;
             if (hit.collider.gameObject.layer == 10)
             {
-                Debug.Log(hit.collider.name);
-                showInteractMsg = true;
+                if (theHitObj.TryGetComponent<ActionObjects>(out actObj))
+                {
+                    actObj = theHitObj.GetComponent<ActionObjects>();
+                    //Debug.Log(hit.collider.name);
+                    msg = actObj.currMsg;
+                    showInteractMsg = true;
+                }
+                else
+                {
+                    Debug.Log("Action Object are Missing, No Interaction will Occured");
+                }
             }
-            else
+            if (hit.collider.gameObject.layer != 10)
             {
                 showInteractMsg = false;
+                theHitObj = null;
+                actObj = null;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && theHitObj != null && showInteractMsg != false)
         {
-            InteractUse();
+            actObj.InteractUse();
         }
-    }
-
-    void InteractUse()
-    {
-        
     }
 
     #region GUI Config
@@ -55,21 +67,6 @@ public class InteractionObjects : MonoBehaviour
         guiStyle.fontStyle = FontStyle.Bold;
         guiStyle.normal.textColor = Color.white;
         msg = "Press E to Interact";
-    }
-
-    private string getGuiMsg(bool isOpen)
-    {
-        string rtnVal;
-        if (isOpen)
-        {
-            rtnVal = "E to turn on Lights";
-        }
-        else
-        {
-            rtnVal = "E to turn off Lights";
-        }
-
-        return rtnVal;
     }
 
     void OnGUI()

@@ -76,7 +76,7 @@ public class MoveObjectController : MonoBehaviour
 			//if raycast hits a collider on the rayLayerMask
 			if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit,reachRange)) //,rayLayerMask // rayOrigin
             {
-                Debug.Log(hit.transform.name);
+                //Debug.Log(hit.transform.name);
                 MoveableObject moveableObject = null;
 				//is the object of the collider player is looking at the same as me?
 				if (!isEqualToParent(hit.collider, out moveableObject))
