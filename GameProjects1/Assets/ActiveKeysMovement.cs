@@ -11,6 +11,9 @@ public class ActiveKeysMovement : MonoBehaviour
     public float originalH;
     public float reducedH;
 
+    private double FearImagination = 0.0;
+    private bool InAreaLight = true;
+
     private void Awake()
     {
         originalH = playerCol.height;
