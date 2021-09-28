@@ -4,14 +4,18 @@ using UnityEngine;
 public class EntityManagement : MonoBehaviour
 {
     public Light NrLight;
-    public GameObject Nightmare;
-
     public List<GameObject> Entities = new List<GameObject>();
 
     // Update is called once per frame
     void Update()
     {
-        if(NrLight.enabled != true) { Nightmare.SetActive(true); }
-        else { Nightmare.SetActive(false); }
+        foreach(GameObject Entity in Entities)
+        {
+            if(Entity.gameObject != null)
+            {
+                if (NrLight.enabled != true) { Entity.SetActive(true); }
+                else { Entity.SetActive(false); }
+            }
+        }
     }
 }

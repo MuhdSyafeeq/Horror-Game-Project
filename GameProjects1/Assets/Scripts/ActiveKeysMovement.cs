@@ -12,11 +12,14 @@ public class ActiveKeysMovement : MonoBehaviour
     public float reducedH;
 
     private double FearImagination = 0.0;
-    private bool InAreaLight = true;
+    public bool InAreaLight = false;
+
+    public SphereCast visionRange;
 
     private void Awake()
     {
         originalH = playerCol.height;
+        playerCol.enabled = true;
     }
 
     // Update is called once per frame
@@ -28,8 +31,14 @@ public class ActiveKeysMovement : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                if(flashlight.enabled == true) { flashlight.enabled = false; }
-                else { flashlight.enabled = true; }
+                if(flashlight.enabled == true) {
+                    flashlight.enabled = false;
+                    visionRange.maxDistance = 2.7f;
+                }
+                else {
+                    flashlight.enabled = true;
+                    visionRange.maxDistance = 1.1f;
+                }
             }
         }
         if (Input.GetKeyDown(KeyCode.LeftShift)) { GetComponent<PlayerMovement>().speed *= speedModifier; }

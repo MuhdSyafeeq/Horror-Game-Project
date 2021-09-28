@@ -14,6 +14,7 @@ public class InteractionObjects : MonoBehaviour
     public ActionObjects actObj;
     public GameObject theHitObj;
     public GameObject hands;
+    public GameObject viewObject;
 
     void Start()
     {

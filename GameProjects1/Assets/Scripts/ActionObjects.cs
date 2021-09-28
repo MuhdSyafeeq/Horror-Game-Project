@@ -8,6 +8,7 @@ public class ActionObjects : MonoBehaviour
     public InteractionObjects iObj;
 
     public string currMsg = "Press E to Interact";
+    public bool isHoldingPaper = false;
 
     public void InteractUse()
     {
@@ -41,6 +42,39 @@ public class ActionObjects : MonoBehaviour
             fl.transform.localRotation = Quaternion.identity;
             //fl.transform.localEulerAngles = new Vector3(90, 0, 0);
             //fl.transform.localScale = new Vector3(5, 5, 5);
+        }
+
+        else if(iObj.theHitObj.name == "Papers")
+        {
+            if(isHoldingPaper == false)
+            {
+                GameObject fl = iObj.theHitObj.gameObject;
+                fl.transform.SetParent(iObj.viewObject.transform);
+                fl.transform.localPosition = Vector3.zero;
+                fl.transform.localRotation = Quaternion.identity;
+                fl.transform.localEulerAngles = new Vector3(0, 180, 0);
+                fl.transform.localScale *= 2f;
+                isHoldingPaper = true;
+            }
+            else
+            {
+                isHoldingPaper = false;
+                GameObject fl = iObj.theHitObj.gameObject;
+                //GameObject Pages = iObj.viewObject.gameObject;
+                //Debug.Log($"Analysing Objects Named -> {Pages.name}");
+                iObj.theHitObj = null;
+                iObj.actObj = null;
+                /**
+                    foreach (GameObject chilObject in Pages.gameObject.transform)
+                    {
+                        if(chilObject.name == "Papers")
+                        {
+                            Destroy(chilObject.gameObject, 2.5f);
+                        }
+                    }
+                **/
+                Destroy(fl.gameObject);
+            }
         }
 
         else
@@ -96,7 +130,5 @@ public class ActionObjects : MonoBehaviour
                 Debug.Log("Unable to Retrieve Animation of Objects, Do Nothing.");
             }
         }
-
-
     }
 }
