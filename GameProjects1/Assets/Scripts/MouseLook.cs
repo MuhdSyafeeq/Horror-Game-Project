@@ -19,15 +19,18 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitiviy * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitiviy * Time.deltaTime;
+        if(gameManager.isPaused != true)
+        {
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitiviy * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitiviy * Time.deltaTime;
 
-        // Look Left or Right (Side-to-Side)
-        playerBody.Rotate(Vector3.up * mouseX);
+            // Look Left or Right (Side-to-Side)
+            playerBody.Rotate(Vector3.up * mouseX);
 
-        // Look Up or Down (Clamping Method)
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            // Look Up or Down (Clamping Method)
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        }
     }
 }

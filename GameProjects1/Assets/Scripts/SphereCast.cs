@@ -15,7 +15,6 @@ public class SphereCast : MonoBehaviour
 
     private float fearMult = .3f;
     private float TimeLook_Ent = 0f;
-    private float TimeAt_Light = 0f;
     public Insanity playerSanity;
 
     public ActiveKeysMovement playerKeys;
@@ -26,41 +25,34 @@ public class SphereCast : MonoBehaviour
     }
 
     void Update()
-    {
-        /**
-        if(playerKeys.InAreaLight == true)
+    { 
+        if(gameManager.isPaused != true)
         {
-            playerSanity.regainSanity(calmDuration * 1.1f - TimeLook_Ent * fearMult);
-        }
-        **/
-
-        
-
-        origin = transform.position;
-        direction = transform.forward;
-        RaycastHit hit;
-        if(Physics.SphereCast(origin, sphereRadius, direction, out hit, maxDistance, layerMask, QueryTriggerInteraction.UseGlobal))
-        {
-            //Debug.Log($"Ent@Look -> {TimeLook_Ent} || @Lights -> {TimeAt_Light}");
-            currentHitObject = hit.transform.gameObject;
-            currentHitDistance = hit.distance;
-            if(hit.transform.gameObject.layer == 11) // If Entities
+            origin = transform.position;
+            direction = transform.forward;
+            RaycastHit hit;
+            if (Physics.SphereCast(origin, sphereRadius, direction, out hit, maxDistance, layerMask, QueryTriggerInteraction.UseGlobal))
             {
-                //Debug.Log("Hit An Entity");
-                if (playerSanity.slider.value >= 0)
+                //Debug.Log($"Ent@Look -> {TimeLook_Ent} || @Lights -> {TimeAt_Light}");
+                currentHitObject = hit.transform.gameObject;
+                currentHitDistance = hit.distance;
+                if (hit.transform.gameObject.layer == 11) // If Entities
                 {
-                    playerSanity.reduceSanity((TimeLook_Ent * fearMult) * Time.deltaTime);
-                    TimeLook_Ent += .17f; //.08f
+                    //Debug.Log("Hit An Entity");
+                    if (playerSanity.slider.value >= 0)
+                    {
+                        playerSanity.reduceSanity((TimeLook_Ent * fearMult) * Time.deltaTime);
+                        TimeLook_Ent += .17f; //.08f
+                    }
                 }
             }
-        }
-        else
-        {
-            currentHitDistance = maxDistance;
-            currentHitObject = null;
+            else
+            {
+                currentHitDistance = maxDistance;
+                currentHitObject = null;
 
-            TimeLook_Ent = 0f;
-            TimeAt_Light = 0f;
+                TimeLook_Ent = 0f;
+            }
         }
     }
 

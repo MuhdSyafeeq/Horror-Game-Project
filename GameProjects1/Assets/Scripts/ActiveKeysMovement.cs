@@ -6,13 +6,11 @@ public class ActiveKeysMovement : MonoBehaviour
 {
     public float speedModifier = 1.2f;
     public GameObject playerHand;
+    public gameManager gm;
 
     public CharacterController playerCol;
     public float originalH;
     public float reducedH;
-
-    private double FearImagination = 0.0;
-    public bool InAreaLight = false;
 
     public SphereCast visionRange;
 
@@ -33,14 +31,20 @@ public class ActiveKeysMovement : MonoBehaviour
             {
                 if(flashlight.enabled == true) {
                     flashlight.enabled = false;
-                    visionRange.maxDistance = 2.7f;
+                    visionRange.maxDistance = 1.1f;
                 }
                 else {
                     flashlight.enabled = true;
-                    visionRange.maxDistance = 1.1f;
+                    visionRange.maxDistance = 2.7f;
                 }
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            gm.Pause();
+        }
+
         if (Input.GetKeyDown(KeyCode.LeftShift)) { GetComponent<PlayerMovement>().speed *= speedModifier; }
         if (Input.GetKeyUp(KeyCode.LeftShift)) { GetComponent<PlayerMovement>().speed /= speedModifier; }
 

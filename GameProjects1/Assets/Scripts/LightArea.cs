@@ -26,26 +26,29 @@ public class LightArea : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(powerLight.enabled == true)
+        if(gameManager.isPaused != true)
         {
-            isNearPlayer = Physics.CheckSphere(this.transform.position, myRadius, layerMask);
-            if (isNearPlayer == true)
+            if (powerLight.enabled == true)
             {
-                //Debug.Log("Hit An Entity");
-                if (playerSanity.slider.value <= playerSanity.slider.maxValue)
+                isNearPlayer = Physics.CheckSphere(this.transform.position, myRadius, layerMask);
+                if (isNearPlayer == true)
                 {
-                    playerSanity.regainSanity(((calmDuration * 1.1f + TimeAt_Light) * fearMult) * Time.deltaTime);
-                    TimeAt_Light += .03f;
-                    if(calmDuration > 0)
+                    //Debug.Log("Hit An Entity");
+                    if (playerSanity.slider.value <= playerSanity.slider.maxValue)
                     {
-                        calmDuration -= .05f;
+                        playerSanity.regainSanity(((calmDuration * 1.1f + TimeAt_Light) * fearMult) * Time.deltaTime);
+                        TimeAt_Light += .03f;
+                        if (calmDuration > 0)
+                        {
+                            calmDuration -= .05f;
+                        }
                     }
                 }
-            }
-            else
-            {
-                TimeAt_Light = 0f;
-                calmDuration = 3f;
+                else
+                {
+                    TimeAt_Light = 0f;
+                    calmDuration = 3f;
+                }
             }
         }
     }
