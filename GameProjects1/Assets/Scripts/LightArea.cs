@@ -36,11 +36,15 @@ public class LightArea : MonoBehaviour
                     //Debug.Log("Hit An Entity");
                     if (playerSanity.slider.value <= playerSanity.slider.maxValue)
                     {
-                        playerSanity.regainSanity(((calmDuration * 1.1f + TimeAt_Light) * fearMult) * Time.deltaTime);
-                        TimeAt_Light += .03f;
+                        playerSanity.regainSanity(((calmDuration * .75f + TimeAt_Light) * fearMult) * Time.deltaTime);
+                        
                         if (calmDuration > 0)
                         {
-                            calmDuration -= .05f;
+                            calmDuration -= 1.5f; //.05f;
+                        }
+                        if(TimeAt_Light < 1f)
+                        {
+                            TimeAt_Light += .01f;
                         }
                     }
                 }

@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class EntityManagement : MonoBehaviour
 {
-    public Light NrLight;
+    public List<Light> NrLight = new List<Light>();
     public List<GameObject> Entities = new List<GameObject>();
+
+    public int LightCounter = 0;
 
     // Update is called once per frame
     void Update()
@@ -13,8 +15,27 @@ public class EntityManagement : MonoBehaviour
         {
             if(Entity.gameObject != null)
             {
-                if (NrLight.enabled != true) { Entity.SetActive(true); }
-                else { Entity.SetActive(false); }
+                foreach(Light L in NrLight)
+                {
+                    if(L.gameObject != null)
+                    {
+                        if(L.enabled == false)
+                        {
+                            LightCounter += 1;
+                        }
+                    }
+                }
+
+                if(LightCounter == NrLight.Count)
+                {
+                    Entity.SetActive(true);
+                }
+                else
+                {
+                    Entity.SetActive(false);
+                }
+
+                LightCounter = 0;
             }
         }
     }

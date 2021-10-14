@@ -11,7 +11,7 @@ public class SphereCast : MonoBehaviour
     public Vector3 origin;
     public Vector3 direction;
 
-    private float currentHitDistance;
+    public float currentHitDistance;
 
     private float fearMult = .3f;
     private float TimeLook_Ent = 0f;

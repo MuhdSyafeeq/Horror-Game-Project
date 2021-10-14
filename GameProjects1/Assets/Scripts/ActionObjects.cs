@@ -2,17 +2,28 @@
 
 public class ActionObjects : MonoBehaviour
 {
+    [Header("Current Object Hits and Ref")]
     public GameObject inRangeObjects;
     public GameObject refObjects;
+    [Space(5)]
+
+    [Header("Current Linked Object")]
     public GameObject linkedInteraction;
     public InteractionObjects iObj;
+    [Space(5)]
 
+    [Header("Lights Material")]
+    public Material LightsOn;
+    public Material LightsOff;
+
+    [Space(5)]
     public string currMsg = "Press E to Interact";
     public bool isHoldingPaper = false;
 
     public void InteractUse()
     {
-        if(iObj.theHitObj.name == "SwitchBox")
+        if(iObj.theHitObj.name == "SwitchBox" ||
+            iObj.theHitObj.name == "Lamps")
         {
             if(refObjects != null)
             {
@@ -21,16 +32,65 @@ public class ActionObjects : MonoBehaviour
                 {
                     refObjects.GetComponent<Light>().enabled = false;
                     currMsg = "Press E to Turn On Lights";
+                    if(linkedInteraction != null)
+                    {
+                        Light LinkedLights;
+                        if(linkedInteraction.TryGetComponent<Light>(out LinkedLights))
+                        {
+                            LinkedLights.enabled = false;
+                        }
+                    }
                 }
                 else
                 {
                     refObjects.GetComponent<Light>().enabled = true;
                     currMsg = "Press E to Turn Off Lights";
+                    if (linkedInteraction != null)
+                    {
+                        Light LinkedLights;
+                        if (linkedInteraction.TryGetComponent<Light>(out LinkedLights))
+                        {
+                            LinkedLights.enabled = true;
+                        }
+                    }
                 }
             }
             else
             {
                 Debug.Log("Unable To Switch Lights, No Object Referenced");
+            }
+        }
+
+        else if (iObj.theHitObj.name == "ACSwitch") {
+            Debug.Log("Aircond Messages");
+        }
+
+        else if (iObj.theHitObj.name == "FanSwitch") {
+            if (refObjects != null)
+            {
+                Animation fan;
+                if(refObjects.TryGetComponent<Animation>(out fan))
+                {
+                    fan = refObjects.GetComponent<Animation>();
+                    if(fan.isPlaying == true)
+                    {
+                        fan.Stop();
+                        Debug.Log("Stop Fan");
+                    }
+                    else
+                    {
+                        fan.Play("Fan");
+                        Debug.Log("Turned On Fan");
+                    }
+                }
+                else
+                {
+                    Debug.Log("Ref Object Fan are Missing?");
+                }
+            }
+            else
+            {
+                Debug.Log("Unable To Switch Fan, No Object Referenced");
             }
         }
 
@@ -40,8 +100,22 @@ public class ActionObjects : MonoBehaviour
             fl.transform.SetParent(iObj.hands.transform);
             fl.transform.localPosition = Vector3.zero;
             fl.transform.localRotation = Quaternion.identity;
-            //fl.transform.localEulerAngles = new Vector3(90, 0, 0);
-            //fl.transform.localScale = new Vector3(5, 5, 5);
+            Rigidbody flashlightRB;
+            if(fl.TryGetComponent<Rigidbody>(out flashlightRB))
+            {
+                fl.GetComponent<Rigidbody>().useGravity = false;
+                fl.GetComponent<Rigidbody>().freezeRotation = true;
+                fl.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            }
+            fl.transform.localEulerAngles = new Vector3(90, -4, 0);
+            fl.transform.localScale = new Vector3(4.5f, 4.5f, 4.5f);
+            /*
+            SphereCast cameraV;
+            if (iObj.fpsCam.gameObject.TryGetComponent<SphereCast>(out cameraV))
+            {
+                fl.transform.LookAt(cameraV.origin + cameraV.direction * cameraV.currentHitDistance);
+            }
+            */
         }
 
         else if(iObj.theHitObj.name == "Papers")
