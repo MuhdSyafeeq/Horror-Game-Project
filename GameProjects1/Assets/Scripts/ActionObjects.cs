@@ -75,11 +75,13 @@ public class ActionObjects : MonoBehaviour
                     if(fan.isPlaying == true)
                     {
                         fan.Stop();
+                        currMsg = "Press E to Turn Off Fan";
                         Debug.Log("Stop Fan");
                     }
                     else
                     {
                         fan.Play("Fan");
+                        currMsg = "Press E to Turn On Fan";
                         Debug.Log("Turned On Fan");
                     }
                 }
