@@ -35,7 +35,6 @@ public class InteractionObjects : MonoBehaviour
                 if (theHitObj.TryGetComponent<ActionObjects>(out actObj))
                 {
                     actObj = theHitObj.GetComponent<ActionObjects>();
-                    //Debug.Log(hit.collider.name);
                     msg = actObj.currMsg;
                     showInteractMsg = true;
                 }

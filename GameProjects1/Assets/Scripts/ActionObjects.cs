@@ -3,7 +3,7 @@
 public class ActionObjects : MonoBehaviour
 {
     [Header("Current Object Hits and Ref")]
-    public GameObject inRangeObjects;
+    //public GameObject currentObject;
     public GameObject refObjects;
     [Space(5)]
 
@@ -12,52 +12,32 @@ public class ActionObjects : MonoBehaviour
     public InteractionObjects iObj;
     [Space(5)]
 
-    [Header("Lights Material")]
-    public Material LightsOn;
-    public Material LightsOff;
-
-    [Space(5)]
+    [Header("Paper Interaction")]
     public string currMsg = "Press E to Interact";
     public bool isHoldingPaper = false;
 
+
     public void InteractUse()
     {
-        if(iObj.theHitObj.name == "SwitchBox" ||
-            iObj.theHitObj.name == "Lamps")
+        if(iObj.theHitObj.name == "LightSwitch" || iObj.theHitObj.name == "Lamps")
         {
-            if(refObjects != null)
+            if (refObjects != null)
             {
                 Light curLight = refObjects.GetComponent<Light>();
                 if(curLight.enabled == true)
                 {
                     refObjects.GetComponent<Light>().enabled = false;
-                    currMsg = "Press E to Turn On Lights";
-                    if(linkedInteraction != null)
-                    {
-                        Light LinkedLights;
-                        if(linkedInteraction.TryGetComponent<Light>(out LinkedLights))
-                        {
-                            LinkedLights.enabled = false;
-                        }
-                    }
+                    currMsg = "Press E to turn on the lights";
                 }
                 else
                 {
                     refObjects.GetComponent<Light>().enabled = true;
-                    currMsg = "Press E to Turn Off Lights";
-                    if (linkedInteraction != null)
-                    {
-                        Light LinkedLights;
-                        if (linkedInteraction.TryGetComponent<Light>(out LinkedLights))
-                        {
-                            LinkedLights.enabled = true;
-                        }
-                    }
+                    currMsg = "Press E to turn off the lights";
                 }
             }
             else
             {
-                Debug.Log("Unable To Switch Lights, No Object Referenced");
+                Debug.Log("Unable To Switch The Power, No Object Referenced");
             }
         }
 
@@ -66,6 +46,7 @@ public class ActionObjects : MonoBehaviour
         }
 
         else if (iObj.theHitObj.name == "FanSwitch") {
+            
             if (refObjects != null)
             {
                 Animation fan;
@@ -74,13 +55,19 @@ public class ActionObjects : MonoBehaviour
                     fan = refObjects.GetComponent<Animation>();
                     if(fan.isPlaying == true)
                     {
-                        fan.Stop();
+                        fan.Play("Fan 2");
+                        this.Invoke(() => fan.Play("Fan"), 1f);
+                        this.Invoke(() => fan.Stop(), 2f);
+
                         currMsg = "Press E to Turn Off Fan";
                         Debug.Log("Stop Fan");
                     }
                     else
                     {
                         fan.Play("Fan");
+                        this.Invoke(() => fan.Play("Fan 2"), 1f);
+                        this.Invoke(() => fan.Stop("Fan 3"), 2f);
+
                         currMsg = "Press E to Turn On Fan";
                         Debug.Log("Turned On Fan");
                     }
@@ -122,7 +109,8 @@ public class ActionObjects : MonoBehaviour
 
         else if(iObj.theHitObj.name == "Papers")
         {
-            if(isHoldingPaper == false)
+            currMsg = "Press E to look at Papers";
+            if (isHoldingPaper == false)
             {
                 GameObject fl = iObj.theHitObj.gameObject;
                 fl.transform.SetParent(iObj.viewObject.transform);
