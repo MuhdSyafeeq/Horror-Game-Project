@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class ActionObjects : MonoBehaviour
 {
-    [Header("Current Object Hits and Ref")]
+    [Header("Object Referenced & List")]
     //public GameObject currentObject;
     public GameObject refObjects;
+    public List<GameObject> connectedObj = new List<GameObject>();
     [Space(5)]
 
     [Header("Current Linked Object")]
@@ -23,6 +25,16 @@ public class ActionObjects : MonoBehaviour
         {
             if (refObjects != null)
             {
+                if (connectedObj.Count > 0)
+                {
+                    foreach(GameObject obj in connectedObj)
+                    {
+                        Light light = obj.GetComponent<Light>();
+                        if (light.enabled == true) { obj.GetComponent<Light>().enabled = false; }
+                        else { obj.GetComponent<Light>().enabled = true; }
+                    }
+                }
+
                 Light curLight = refObjects.GetComponent<Light>();
                 if(curLight.enabled == true)
                 {
@@ -60,7 +72,7 @@ public class ActionObjects : MonoBehaviour
                         this.Invoke(() => fan.Stop(), 2f);
 
                         currMsg = "Press E to Turn Off Fan";
-                        Debug.Log("Stop Fan");
+                        //Debug.Log("Stop Fan");
                     }
                     else
                     {
@@ -69,7 +81,7 @@ public class ActionObjects : MonoBehaviour
                         this.Invoke(() => fan.Stop("Fan 3"), 2f);
 
                         currMsg = "Press E to Turn On Fan";
-                        Debug.Log("Turned On Fan");
+                        //Debug.Log("Turned On Fan");
                     }
                 }
                 else
