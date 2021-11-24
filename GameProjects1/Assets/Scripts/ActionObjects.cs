@@ -110,11 +110,12 @@ public class ActionObjects : MonoBehaviour
             }
             fl.transform.localEulerAngles = new Vector3(90, -4, 0);
             fl.transform.localScale = new Vector3(4.5f, 4.5f, 4.5f);
+
             /*
             SphereCast cameraV;
             if (iObj.fpsCam.gameObject.TryGetComponent<SphereCast>(out cameraV))
             {
-                fl.transform.LookAt(cameraV.origin + cameraV.direction * cameraV.currentHitDistance);
+                fl.transform.LookAt(iObj.fpsCam.gameObject.transform.position + (cameraV.origin + cameraV.direction * cameraV.maxDistance));
             }
             */
         }
