@@ -5,7 +5,7 @@ using UnityEngine;
 public class LightArea : MonoBehaviour
 {
     bool isNearPlayer = false;
-    public float myRadius = 2f;
+    public float myRadius;
     public LayerMask layerMask;
 
     private float calmDuration = 3f;
@@ -20,6 +20,10 @@ public class LightArea : MonoBehaviour
         if(powerLight == null)
         {
             powerLight = this.gameObject.GetComponent<Light>();
+        }
+        if(myRadius == 0)
+        {
+            myRadius = powerLight.range;
         }
     }
 
