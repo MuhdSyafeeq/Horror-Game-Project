@@ -13,6 +13,7 @@ public class ActiveKeysMovement : MonoBehaviour
     public float reducedH;
 
     public SphereCast visionRange;
+    public Animator anim;
 
     private void Awake()
     {
@@ -45,8 +46,8 @@ public class ActiveKeysMovement : MonoBehaviour
             gm.Pause();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift)) { GetComponent<PlayerMovement>().speed *= speedModifier; }
-        if (Input.GetKeyUp(KeyCode.LeftShift)) { GetComponent<PlayerMovement>().speed /= speedModifier; }
+        if (Input.GetKeyDown(KeyCode.LeftShift)) { GetComponent<PlayerMovement>().speed *= speedModifier; anim.SetTrigger("inputShift"); }
+        if (Input.GetKeyUp(KeyCode.LeftShift)) { GetComponent<PlayerMovement>().speed /= speedModifier; anim.SetTrigger("inputShift"); }
 
         if (Input.GetKeyDown(KeyCode.LeftControl)) { Crouching(); }
         if (Input.GetKeyUp(KeyCode.LeftControl)) { Standing(); }

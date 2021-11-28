@@ -15,8 +15,15 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
     bool isGrounded;
 
+    // Animation
+    public Animator anim;
+
     //Jump Implementation Variable
     public float jumpHeight = 3f;
+
+    // Data Test Areas
+    public float HorizontalF;
+    public float VerticalF;
 
     // Update is called once per frame
     void Update()
@@ -31,6 +38,9 @@ public class PlayerMovement : MonoBehaviour
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
 
+            anim.SetFloat("inputH", Mathf.Abs(x));
+            anim.SetFloat("inputV", Mathf.Abs(z));
+
             Vector3 move = transform.right * x + transform.forward * z;
             controller.Move(move * speed * Time.deltaTime);
 
@@ -41,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             //Gravity Method
-            velocity.y += gravity * Time.deltaTime;
+            if (!isGrounded) { velocity.y += gravity * Time.deltaTime; }
             controller.Move(velocity * Time.deltaTime);
         }
     }
