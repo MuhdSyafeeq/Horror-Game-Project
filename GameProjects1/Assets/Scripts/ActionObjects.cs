@@ -17,7 +17,9 @@ public class ActionObjects : MonoBehaviour
     [Header("Paper Interaction")]
     public string currMsg = "Press E to Interact";
     public bool isHoldingPaper = false;
+    [Space(5)]
 
+    public gameManager gm;
 
     public void InteractUse()
     {
@@ -51,6 +53,19 @@ public class ActionObjects : MonoBehaviour
             {
                 Debug.Log("Unable To Switch The Power, No Object Referenced");
             }
+        }
+
+        else if(iObj.theHitObj.name == "mannequin_body" || iObj.theHitObj.name == "mannequin_leg_right"
+            || iObj.theHitObj.name == "mannequin_leg_left" || iObj.theHitObj.name == "mannequin_arm_left_b"
+            || iObj.theHitObj.name == "mannequin_arm_right_b" || iObj.theHitObj.name == "mannequin_head")
+        {
+            gm.missingparts += 1;
+            gm.UpdateText();
+
+            GameObject fl = iObj.theHitObj.gameObject;
+            iObj.theHitObj = null;
+            iObj.actObj = null;
+            Destroy(fl);
         }
 
         else if (iObj.theHitObj.name == "ACSwitch") {

@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class MouseLook : MonoBehaviour
 {
     public float mouseSensitiviy = 100f;
+    public Slider mouseSlider;
 
     public Transform playerBody;
 
@@ -14,6 +14,26 @@ public class MouseLook : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void changeSensitivity(string mouseSens)
+    {
+        float newData;
+        if(float.TryParse(mouseSens, out newData))
+        {
+            changeSensitivity(newData);
+        }
+    }
+
+    public void changeSensitivity(float mouseSens)
+    {
+        if (mouseSens == 0) { mouseSens = 1; }
+        else
+        {
+            mouseSensitiviy = (mouseSens / (100f / 10f)) * 100f;
+            mouseSlider.value = mouseSensitiviy / 10f;
+        }
+        
     }
 
     // Update is called once per frame
