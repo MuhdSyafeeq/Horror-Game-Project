@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class MouseLook : MonoBehaviour
 {
     public float mouseSensitiviy = 100f;
     public Slider mouseSlider;
+    public TMP_InputField mouseInput;
 
     public Transform playerBody;
 
@@ -28,10 +30,12 @@ public class MouseLook : MonoBehaviour
     public void changeSensitivity(float mouseSens)
     {
         if (mouseSens == 0) { mouseSens = 1; }
+        else if(mouseSens > 10) { mouseSens = 10; }
         else
         {
             mouseSensitiviy = (mouseSens / (100f / 10f)) * 100f;
             mouseSlider.value = mouseSensitiviy / 10f;
+            mouseInput.text = System.Math.Round(mouseSlider.value, 2).ToString();
         }
         
     }
