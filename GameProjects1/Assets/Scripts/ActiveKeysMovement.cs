@@ -36,7 +36,7 @@ public class ActiveKeysMovement : MonoBehaviour
                 }
                 else {
                     flashlight.enabled = true;
-                    visionRange.maxDistance = 2.7f;
+                    visionRange.maxDistance = 3.5f;
                 }
             }
         }
@@ -46,8 +46,14 @@ public class ActiveKeysMovement : MonoBehaviour
             gm.Pause();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift)) { GetComponent<PlayerMovement>().speed *= speedModifier; anim.SetTrigger("inputShift"); }
-        if (Input.GetKeyUp(KeyCode.LeftShift)) { GetComponent<PlayerMovement>().speed /= speedModifier; anim.SetTrigger("inputShift"); }
+        if (Input.GetKeyDown(KeyCode.LeftShift)) {
+            GetComponent<PlayerMovement>().speed *= speedModifier;
+            anim.SetTrigger("inputShift");
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift)) {
+            GetComponent<PlayerMovement>().speed /= speedModifier;
+            anim.SetTrigger("inputShift");
+        }
 
         if (Input.GetKeyDown(KeyCode.LeftControl)) { Crouching(); }
         if (Input.GetKeyUp(KeyCode.LeftControl)) { Standing(); }

@@ -24,11 +24,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3319910918417338894}
   m_LocalRotation: {x: -0.017441817, y: -0.03489427, z: -0.0006090832, w: 0.9992386}
-  m_LocalPosition: {x: 1.34, y: -1.04, z: 1.72}
+  m_LocalPosition: {x: 1.3399963, y: -1.0399998, z: 1.7200012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3687652867118989286}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -2, y: -4, z: 0}
 --- !u!1 &3687652866672088574
 GameObject:
@@ -90,8 +90,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2274132605644515484}
   - {fileID: 4611304334892774379}
+  - {fileID: 2274132605644515484}
   m_Father: {fileID: 3687652868213129790}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -159,6 +159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitiviy: 100
+  mouseSlider: {fileID: 0}
+  mouseInput: {fileID: 0}
   playerBody: {fileID: 3687652868213129790}
 --- !u!1 &3687652868213129788
 GameObject:
@@ -234,7 +236,10 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 512
+  anim: {fileID: 0}
   jumpHeight: 2
+  HorizontalF: 0
+  VerticalF: 0
 --- !u!114 &3687652868213129776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +259,7 @@ MonoBehaviour:
   originalH: 0
   reducedH: 0
   visionRange: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!1 &5846362544283744929
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +289,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3687652867118989286}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1255938388374943409
 MonoBehaviour:
