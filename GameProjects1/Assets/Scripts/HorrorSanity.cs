@@ -30,6 +30,17 @@ public class HorrorSanity : MonoBehaviour
                 GameObject creepyPuppet = horrorProps.Where(obj => obj.name == "Dead_man(anim)").SingleOrDefault();
                 creepyPuppet.gameObject.SetActive(false);
             }
+
+            if(gameManager.missingparts == 3)
+            {
+                GameObject crawler = horrorProps.Where(obj => obj.name == "crawler").SingleOrDefault();
+                crawler.gameObject.SetActive(true);
+            }
+            else if(gameManager.missingparts < 3)
+            {
+                GameObject crawler = horrorProps.Where(obj => obj.name == "crawler").SingleOrDefault();
+                crawler.gameObject.SetActive(false);
+            }
         }
     }
 }

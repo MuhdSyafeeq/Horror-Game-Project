@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 3687652867118989285}
   - component: {fileID: 3687652867118989284}
   - component: {fileID: 3687652867118989287}
+  - component: {fileID: 6247034580426955756}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -162,6 +163,29 @@ MonoBehaviour:
   mouseSlider: {fileID: 0}
   mouseInput: {fileID: 0}
   playerBody: {fileID: 3687652868213129790}
+--- !u!114 &6247034580426955756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3687652867118989283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6655ede268245924c834ed14df0e6c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHitObject: {fileID: 0}
+  sphereRadius: 0.075
+  maxDistance: 3
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  origin: {x: 0, y: 0, z: 0}
+  direction: {x: 0, y: 0, z: 0}
+  currentHitDistance: 0
+  playerSanity: {fileID: 0}
+  playerKeys: {fileID: 3687652868213129776}
 --- !u!1 &3687652868213129788
 GameObject:
   m_ObjectHideFlags: 0

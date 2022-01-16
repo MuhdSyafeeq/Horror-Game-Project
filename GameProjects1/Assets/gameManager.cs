@@ -15,7 +15,7 @@ public class gameManager : MonoBehaviour
     public List<AudioSource> soundGroup;
 
     public static bool isPaused = false;
-    public int missingparts = 0;
+    public static int missingparts = 0;
 
     public AudioMixer auMix;
 

@@ -59,7 +59,7 @@ public class ActionObjects : MonoBehaviour
             || iObj.theHitObj.name == "mannequin_leg_left" || iObj.theHitObj.name == "mannequin_arm_left_b"
             || iObj.theHitObj.name == "mannequin_arm_right_b" || iObj.theHitObj.name == "mannequin_head")
         {
-            gm.missingparts += 1;
+            gameManager.missingparts += 1;
             gm.UpdateText();
 
             GameObject fl = iObj.theHitObj.gameObject;

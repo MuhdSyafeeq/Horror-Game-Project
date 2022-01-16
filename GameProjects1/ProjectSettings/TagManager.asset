@@ -18,10 +18,10 @@ TagManager:
   - InteractionObject
   - Entities
   - Player
-  - BlockView
   - 
-  - 
-  - 
+  - Decorations
+  - Walls Pillars
+  - Ceiling
   - 
   - 
   - 
