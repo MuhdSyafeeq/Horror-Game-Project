@@ -32,11 +32,11 @@ public class ActiveKeysMovement : MonoBehaviour
             {
                 if(flashlight.enabled == true) {
                     flashlight.enabled = false;
-                    visionRange.maxDistance = 1.1f;
+                    visionRange.maxDistance = 5.5f; //1.1f
                 }
                 else {
                     flashlight.enabled = true;
-                    visionRange.maxDistance = 3.5f;
+                    visionRange.maxDistance = 10.5f; //3.5f
                 }
             }
         }

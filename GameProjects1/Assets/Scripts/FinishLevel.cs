@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FinishLevel : MonoBehaviour
 {
+    public gameManager gm;
     public GameObject[] aura;
 
     private void Update()
@@ -20,5 +21,6 @@ public class FinishLevel : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         Debug.Log("FINSIHED");
+        gm.Finish();
     }
 }

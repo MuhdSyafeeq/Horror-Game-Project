@@ -35,7 +35,7 @@ public class LightArea : MonoBehaviour
         {
             if (powerLight.enabled == true)
             {
-                visionrange.maxDistance = 3.5f;
+                //visionrange.maxDistance = 10.5f;
                 isNearPlayer = Physics.CheckSphere(this.transform.position, myRadius, layerMask);
                 if (isNearPlayer == true)
                 {
@@ -58,7 +58,7 @@ public class LightArea : MonoBehaviour
                 {
                     TimeAt_Light = 0f;
                     calmDuration = 3f;
-                    visionrange.maxDistance = 1.1f;
+                    //visionrange.maxDistance = 1.1f;
                 }
             }
         }

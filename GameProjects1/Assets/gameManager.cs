@@ -25,7 +25,7 @@ public class gameManager : MonoBehaviour
     public void UpdateText()
     {
         GameObject textPanel = gameObjects.Where(obj => obj.name == "Text-Updater").SingleOrDefault();
-        textPanel.GetComponent<Text>().text = "Missing Parts " + missingparts.ToString() + "/5";
+        textPanel.GetComponent<Text>().text = "Missing Parts " + missingparts.ToString() + " / 6";
     }
 
     public void Pause()
@@ -43,6 +43,17 @@ public class gameManager : MonoBehaviour
         pausePanel.SetActive(true);
         crosshairPanel.SetActive(false);
 
+        Cursor.lockState = CursorLockMode.Confined;
+        isPaused = true;
+    }
+
+    public void Finish()
+    {
+        GameObject finishPanel = gameObjects.Where(obj => obj.name == "Ui-Finish-Panel").SingleOrDefault();
+        GameObject crosshairPanel = gameObjects.Where(obj => obj.name == "Crosshair").SingleOrDefault();
+
+        finishPanel.SetActive(true);
+        crosshairPanel.SetActive(false);
         Cursor.lockState = CursorLockMode.Confined;
         isPaused = true;
     }

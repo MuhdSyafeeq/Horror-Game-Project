@@ -18,7 +18,7 @@ public class HorrorSanity : MonoBehaviour
                 if(curLight.enabled == false) { counter++; }
             }
 
-            Debug.Log($"Counter -> {counter} / Light Counts -> {nearLights.Count()}");
+            //Debug.Log($"Counter -> {counter} / Light Counts -> {nearLights.Count()}");
             if(counter == nearLights.Length)
             {
                 GameObject creepyPuppet = horrorProps.Where(obj => obj.name == "Dead_man(anim)").SingleOrDefault();
