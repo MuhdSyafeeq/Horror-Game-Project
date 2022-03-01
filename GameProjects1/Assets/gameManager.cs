@@ -56,6 +56,31 @@ public class gameManager : MonoBehaviour
         crosshairPanel.SetActive(false);
         Cursor.lockState = CursorLockMode.Confined;
         isPaused = true;
+
+        /*
+        foreach(AudioSource audio in soundGroup)
+        {
+            audio.Pause();
+        }
+        */
+    }
+
+    public void GameOver()
+    {
+        GameObject gameOver = gameObjects.Where(obj => obj.name == "Ui-GameOver-Panel").SingleOrDefault();
+        GameObject crosshairPanel = gameObjects.Where(obj => obj.name == "Crosshair").SingleOrDefault();
+
+        gameOver.SetActive(true);
+        crosshairPanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.Confined;
+        isPaused = true;
+
+        /*
+        foreach(AudioSource audio in soundGroup)
+        {
+            audio.Pause();
+        }
+        */
     }
 
     public void Resume()
@@ -87,10 +112,18 @@ public class gameManager : MonoBehaviour
 
     public void Restart()
     {
-        Resume();
-        //Debug.Log("Restart-ed a Game");
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Confined;
+        isPaused = false;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         
+        //foreach (AudioSource audio in soundGroup) { audio.UnPause(); }
+        
+       // GameObject crosshairPanel = gameObjects.Where(obj => obj.name == "Crosshair").SingleOrDefault();
+        //crosshairPanel.SetActive(true);
+
+        Debug.Log($"[AFTER RESET] Game System is Paused? -> { isPaused }");
     }
 
     public void changeVolume(float volume)

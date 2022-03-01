@@ -5,7 +5,7 @@ public class SphereCast : MonoBehaviour
     public GameObject currentHitObject;
 
     public float sphereRadius;
-    public float maxDistance;
+    public float maxDistance = 5.5f;
     public LayerMask layerMask;
 
     public Vector3 origin;

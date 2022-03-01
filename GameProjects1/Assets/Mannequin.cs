@@ -11,7 +11,7 @@ public class Mannequin : MonoBehaviour
     [Header("Movement Settings")]
     [SerializeField]
     bool isNearPlayer = false;
-    float sensor = 2.5f;
+    public float sensor = 2.5f;
     public SphereCast checkCast;
     public NavMeshAgent agent;
     public GameObject target;
@@ -19,35 +19,77 @@ public class Mannequin : MonoBehaviour
 
     [Header("References Settings")]
     [SerializeField]
-    int arrInBodyList = 0;
+    int BodyCountinList = 0;
     public GameObject[] bodyList;
+
+    [Header("GameManager Settings")]
+    [SerializeField]
+    public gameManager gm;
 
     // Update is called once per frame
     void Update()
     {
-        if (gameManager.missingparts >= 0 && (!gameManager.isPaused))
+        if (gameManager.missingparts >= 0 && (gameManager.isPaused != true))
         {
             isNearPlayer = Physics.CheckSphere(this.transform.position, sensor, layerMask);
             if (isNearPlayer)
             {
                 agent.SetDestination(target.transform.position);
-                foreach(GameObject objectContain in bodyList)
+                bool hasArrived = checkDistance(agent);
+
+                foreach (GameObject objectContain in bodyList)
                 {
                     if (checkCast.currentHitObject == (objectContain.gameObject))
                     {
                         agent.isStopped = true;
-                        arrInBodyList = 0;
+                        BodyCountinList = 0;
                         break;
                     }
-                    arrInBodyList = arrInBodyList + 1;
+                    BodyCountinList = BodyCountinList + 1;
                 }
 
-                if(arrInBodyList == bodyList.Length)
+                if (BodyCountinList == bodyList.Length)
                 {
-                    agent.isStopped = false;
-                    arrInBodyList = 0;
+                    if (hasArrived)
+                    {
+                        agent.isStopped = true;
+                        //agent.enabled = false;
+                        //agent.Stop();
+                        gameManager.isPaused = true;
+                        this.Invoke(() => gm.GameOver(), 1.5f);
+                    }
+                    else
+                    {
+                        agent.isStopped = false;
+                        BodyCountinList = 0;
+                    }
                 }
             }
         }
     }
+
+    public bool checkDistance(NavMeshAgent navMesh)
+    {
+        // Check if we've reached the destination
+        if (!navMesh.pathPending)
+        {
+            if (navMesh.remainingDistance <= navMesh.stoppingDistance)
+            {
+                if (!navMesh.hasPath || navMesh.velocity.sqrMagnitude == 0f)
+                {
+                    //Debug.Log("!navMesh.hasPath || navMesh.velocity.sqrMagnitude == 0f");
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, sensor);
+    }
 }
+
