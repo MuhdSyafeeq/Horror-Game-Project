@@ -31,7 +31,7 @@ public class LightArea : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameManager.isPaused != true)
+        if(gameManager.Instance.isPaused != true)
         {
             if (powerLight.enabled == true)
             {

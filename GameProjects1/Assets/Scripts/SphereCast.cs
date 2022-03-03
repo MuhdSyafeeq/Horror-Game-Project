@@ -26,7 +26,7 @@ public class SphereCast : MonoBehaviour
 
     void Update()
     { 
-        if(gameManager.isPaused != true)
+        if(gameManager.Instance.isPaused != true)
         {
             origin = transform.position;
             direction = transform.forward;

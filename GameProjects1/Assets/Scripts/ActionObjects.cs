@@ -17,9 +17,9 @@ public class ActionObjects : MonoBehaviour
     [Header("Paper Interaction")]
     public string currMsg = "Press E to Interact";
     public bool isHoldingPaper = false;
-    [Space(5)]
+    //[Space(5)]
 
-    public gameManager gm;
+    //public gameManager gm;
 
     public void InteractUse()
     {
@@ -59,8 +59,8 @@ public class ActionObjects : MonoBehaviour
             || iObj.theHitObj.name == "mannequin_leg_left" || iObj.theHitObj.name == "mannequin_arm_left_b"
             || iObj.theHitObj.name == "mannequin_arm_right_b" || iObj.theHitObj.name == "mannequin_head")
         {
-            gameManager.missingparts += 1;
-            gm.UpdateText();
+            gameManager.Instance.missingparts += 1;
+            gameManager.Instance.UpdateText();
 
             GameObject fl = iObj.theHitObj.gameObject;
             iObj.theHitObj = null;
@@ -86,7 +86,7 @@ public class ActionObjects : MonoBehaviour
                         this.Invoke(() => fan.Play("Fan"), 1f);
                         this.Invoke(() => fan.Stop(), 2f);
 
-                        currMsg = "Press E to Turn Off Fan";
+                        currMsg = "Press E to Turn On Fan";
                         //Debug.Log("Stop Fan");
                     }
                     else
@@ -95,7 +95,7 @@ public class ActionObjects : MonoBehaviour
                         this.Invoke(() => fan.Play("Fan 2"), 1f);
                         this.Invoke(() => fan.Stop("Fan 3"), 2f);
 
-                        currMsg = "Press E to Turn On Fan";
+                        currMsg = "Press E to Turn Off Fan";
                         //Debug.Log("Turned On Fan");
                     }
                 }

@@ -6,7 +6,7 @@ public class ActiveKeysMovement : MonoBehaviour
 {
     public float speedModifier = 1.2f;
     public GameObject playerHand;
-    public gameManager gm;
+    //public gameManager gm;
 
     public CharacterController playerCol;
     public float originalH;
@@ -43,7 +43,7 @@ public class ActiveKeysMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            gm.Pause();
+            gameManager.Instance.Pause();
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift)) {

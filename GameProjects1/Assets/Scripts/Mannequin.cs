@@ -22,14 +22,16 @@ public class Mannequin : MonoBehaviour
     int BodyCountinList = 0;
     public GameObject[] bodyList;
 
+    /*
     [Header("GameManager Settings")]
     [SerializeField]
     public gameManager gm;
+    */
 
     // Update is called once per frame
     void Update()
     {
-        if (gameManager.missingparts >= 0 && (gameManager.isPaused != true))
+        if (gameManager.Instance.missingparts >= 0 && (gameManager.Instance.isPaused != true))
         {
             isNearPlayer = Physics.CheckSphere(this.transform.position, sensor, layerMask);
             if (isNearPlayer)
@@ -55,8 +57,8 @@ public class Mannequin : MonoBehaviour
                         agent.isStopped = true;
                         //agent.enabled = false;
                         //agent.Stop();
-                        gameManager.isPaused = true;
-                        this.Invoke(() => gm.GameOver(), 1.5f);
+                        gameManager.Instance.isPaused = true;
+                        this.Invoke(() => gameManager.Instance.GameOver(), 1.5f);
                     }
                     else
                     {

@@ -11,11 +11,29 @@ using System.Text.RegularExpressions;
 
 public class gameManager : MonoBehaviour
 {
+    public static gameManager Instance { get; private set; }
+
+    //If a script will be using the singleton in its awake method, make sure the manager is first to execute with the Script Execution Order project settings
+    void Awake()
+    {
+        if (Instance != null) //this depend how you want to handle multiple managers (like when switching/adding scenes) but this way should cover common use cases
+            Destroy(Instance);
+        Instance = this;
+    }
+
+    void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
+    }
+
     public List<GameObject> gameObjects;
     public List<AudioSource> soundGroup;
 
-    public static bool isPaused = false;
-    public static int missingparts = 0;
+    public bool isPaused = false;
+    public int missingparts = 0;
 
     public AudioMixer auMix;
 
@@ -117,12 +135,7 @@ public class gameManager : MonoBehaviour
         isPaused = false;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        
         //foreach (AudioSource audio in soundGroup) { audio.UnPause(); }
-        
-       // GameObject crosshairPanel = gameObjects.Where(obj => obj.name == "Crosshair").SingleOrDefault();
-        //crosshairPanel.SetActive(true);
-
         Debug.Log($"[AFTER RESET] Game System is Paused? -> { isPaused }");
     }
 
