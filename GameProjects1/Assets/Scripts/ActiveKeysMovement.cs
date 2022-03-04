@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class ActiveKeysMovement : MonoBehaviour
 {
-    public float speedModifier = 1.2f;
+    [Header("Player Settings")]
+    [SerializeField]
     public GameObject playerHand;
+    public float speedModifier = 1.2f;
     //public gameManager gm;
 
+    [Header("Character Settings")]
+    [SerializeField]
     public CharacterController playerCol;
     public float originalH;
     public float reducedH;
 
+    [Header("View Distance Settings")]
+    [SerializeField]
     public SphereCast visionRange;
+    public bool hasFlashlight = false;
+    public Light spotLights;
+
+    [Header("Animations Settings")]
+    [SerializeField]
     public Animator anim;
 
     private void Awake()
@@ -26,20 +37,21 @@ public class ActiveKeysMovement : MonoBehaviour
     {
         Light flashlight;
         flashlight = playerHand.GetComponentInChildren<Light>();
-        if(flashlight != null)
+        if(flashlight != null && spotLights != null) { hasFlashlight = true; }
+        if (hasFlashlight && Input.GetKeyDown(KeyCode.F))
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (spotLights.enabled == true)
             {
-                if(flashlight.enabled == true) {
-                    flashlight.enabled = false;
-                    visionRange.maxDistance = 5.5f; //1.1f
-                }
-                else {
-                    flashlight.enabled = true;
-                    visionRange.maxDistance = 10.5f; //3.5f
-                }
+                spotLights.enabled = false;
+                visionRange.maxDistance = 5.5f; //1.1f
+            }
+            else
+            {
+                spotLights.enabled = true;
+                visionRange.maxDistance = 10.5f; //3.5f
             }
         }
+        
 
         if (Input.GetKeyDown(KeyCode.P))
         {

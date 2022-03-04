@@ -114,7 +114,7 @@ public class ActionObjects : MonoBehaviour
         {
             GameObject fl = iObj.theHitObj.gameObject;
             fl.transform.SetParent(iObj.hands.transform);
-            fl.transform.localPosition = Vector3.zero;
+            fl.transform.localPosition = new Vector3(0.426f, -1.5f, -0.65f);
             fl.transform.localRotation = Quaternion.identity;
             Rigidbody flashlightRB;
             if(fl.TryGetComponent<Rigidbody>(out flashlightRB))
@@ -125,14 +125,6 @@ public class ActionObjects : MonoBehaviour
             }
             fl.transform.localEulerAngles = new Vector3(90, -4, 0);
             fl.transform.localScale = new Vector3(2f, 2f, 2f);
-
-            /*
-            SphereCast cameraV;
-            if (iObj.fpsCam.gameObject.TryGetComponent<SphereCast>(out cameraV))
-            {
-                fl.transform.LookAt(iObj.fpsCam.gameObject.transform.position + (cameraV.origin + cameraV.direction * cameraV.maxDistance));
-            }
-            */
         }
 
         else if(iObj.theHitObj.name == "Papers")
