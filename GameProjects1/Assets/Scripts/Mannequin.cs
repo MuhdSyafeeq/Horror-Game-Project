@@ -6,7 +6,7 @@ public class Mannequin : MonoBehaviour
     [Header("Animation Settings")]
     [SerializeField]
     bool isWalking = false;
-    //public Animator skeleton;
+    public Animator skeleton;
 
     [Header("Movement Settings")]
     [SerializeField]
@@ -22,20 +22,51 @@ public class Mannequin : MonoBehaviour
     int BodyCountinList = 0;
     public GameObject[] bodyList;
 
-    /*
-    [Header("GameManager Settings")]
+
+    [Header("Body-Replacing Settings")]
     [SerializeField]
-    public gameManager gm;
-    */
+    bool startChase = false;
+    bool activateUpdate = false;
+    int numCol = 0;
+    public GameObject bodyChange;
+    public SkinnedMeshRenderer[] meshRendr;
+    public MeshCollider[] meshColl;
 
     // Update is called once per frame
     void Update()
     {
         if (gameManager.Instance.missingparts >= 0 && (gameManager.Instance.isPaused != true))
         {
+            if (activateUpdate)
+            {
+                foreach (SkinnedMeshRenderer skinned in meshRendr)
+                {
+                    Mesh colliderMesh = new Mesh();
+                    skinned.BakeMesh(colliderMesh);
+                    meshColl[numCol].sharedMesh = null;
+                    meshColl[numCol].sharedMesh = colliderMesh;
+                    numCol += 1;
+                }
+                numCol = 0;
+            }
+
+            if(startChase == true) {
+                foreach(GameObject currentObject in bodyList)
+                {
+                    if(BodyCountinList == 6) { break; }
+
+                    currentObject.SetActive(false);
+                    BodyCountinList += 1;
+                }
+                startChase = false;
+                activateUpdate = true;
+            }
+
             isNearPlayer = Physics.CheckSphere(this.transform.position, sensor, layerMask);
             if (isNearPlayer)
             {
+                if (!activateUpdate) { startChase = true; }
+
                 agent.SetDestination(target.transform.position);
                 bool hasArrived = checkDistance(agent);
 
@@ -43,6 +74,8 @@ public class Mannequin : MonoBehaviour
                 {
                     if (checkCast.currentHitObject == (objectContain.gameObject))
                     {
+                        skeleton.enabled = false;
+
                         agent.isStopped = true;
                         BodyCountinList = 0;
                         break;
@@ -62,6 +95,8 @@ public class Mannequin : MonoBehaviour
                     }
                     else
                     {
+                        skeleton.enabled = true;
+
                         agent.isStopped = false;
                         BodyCountinList = 0;
                     }
