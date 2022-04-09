@@ -28,6 +28,7 @@ public class Mannequin : MonoBehaviour
     bool startChase = false;
     bool activateUpdate = false;
     int numCol = 0;
+
     public GameObject bodyChange;
     public SkinnedMeshRenderer[] meshRendr;
     public MeshCollider[] meshColl;
@@ -58,6 +59,7 @@ public class Mannequin : MonoBehaviour
                     currentObject.SetActive(false);
                     BodyCountinList += 1;
                 }
+                bodyChange.SetActive(true);
                 startChase = false;
                 activateUpdate = true;
             }
