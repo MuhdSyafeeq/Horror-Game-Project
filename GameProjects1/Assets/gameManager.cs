@@ -139,6 +139,17 @@ public class gameManager : MonoBehaviour
         Debug.Log($"[AFTER RESET] Game System is Paused? -> { isPaused }");
     }
 
+    public void StartGame()
+    {
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Confined;
+        isPaused = false;
+
+        SceneManager.LoadScene(1);
+        //foreach (AudioSource audio in soundGroup) { audio.UnPause(); }
+        Debug.Log($"[AFTER RESET] Game System is Paused? -> { isPaused }");
+    }
+
     public void changeVolume(float volume)
     {
         float calc;
