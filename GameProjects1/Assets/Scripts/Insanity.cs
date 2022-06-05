@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class Insanity : MonoBehaviour
 {
     public Slider slider;
+    public float valIndifference;
 
     public void SetMaxSanity(float sanity)
     {
@@ -31,18 +32,22 @@ public class Insanity : MonoBehaviour
             slider.value += sanity;
         }
     }
-
-    /*
+    
     private void Update()
     {
-        if(slider.value == 0)
+        if(gameManager.Instance.isPaused == false && slider.value == 0)
         {
-            Debug.Log("Out of Sanity");
+            Debug.Log($"<color=yellow>Activity Logs -></color> Player's Sanity is <color=blue>{slider.value}</color>");
+
+            Debug.Log("<color=red>Game Over:</color> You Went Insane...");
+            gameManager.Instance.isPaused = true;
+            this.Invoke(() => gameManager.Instance.GameOver(), 1.5f);
         }
-        if (slider.value == slider.maxValue)
-        {
-            Debug.Log("Max Sanity");
-        }
+
+        //if Less than 90%, Start Reduce Pitch
+        //if(slider.value <= (0.9f * slider.maxValue))
+        //{
+        //    float tempValue = slider.value;
+        //}
     }
-    */
 }

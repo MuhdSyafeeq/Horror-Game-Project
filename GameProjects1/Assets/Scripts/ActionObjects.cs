@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 public class ActionObjects : MonoBehaviour
 {
@@ -127,36 +128,58 @@ public class ActionObjects : MonoBehaviour
             fl.transform.localScale = new Vector3(2f, 2f, 2f);
         }
 
-        else if(iObj.theHitObj.name == "Papers")
+        else if(iObj.theHitObj.name == "StoriesLeftBehind")
         {
             currMsg = "Press E to look at Papers";
             if (isHoldingPaper == false)
             {
+                /***
                 GameObject fl = iObj.theHitObj.gameObject;
                 fl.transform.SetParent(iObj.viewObject.transform);
                 fl.transform.localPosition = Vector3.zero;
                 fl.transform.localRotation = Quaternion.identity;
                 fl.transform.localEulerAngles = new Vector3(0, 180, 0);
                 fl.transform.localScale *= 2f;
+                ***/
+                foreach(GameObject obj in connectedObj)
+                {
+                    GameObject currentObj = obj;
+                    bool checkTMP = currentObj.TryGetComponent<TextMeshPro>(out TextMeshPro tmp);
+                    if(checkTMP == true)
+                    {
+                        string copyTexts = "<Waiting For Next Value>";
+                        if (currentObj.name == "FromText")
+                        {
+                            copyTexts = tmp.text;
+                        }
+                        else if (currentObj.name == "AfterText")
+                        {
+                            tmp.text = copyTexts;
+                        }
+                    }
+                    else {
+                        currentObj.SetActive(true);
+                    }
+
+                }
+
                 isHoldingPaper = true;
+                currMsg = "Press E to crumple the paper";
+                gameManager.Instance.isPaused = true;
             }
             else
             {
+                gameManager.Instance.isPaused = false;
+                foreach (GameObject obj in connectedObj)
+                {
+                    GameObject currentObj = obj;
+                    if (currentObj.name == "ViewPages"){ currentObj.SetActive(false); }
+                }
                 isHoldingPaper = false;
+
                 GameObject fl = iObj.theHitObj.gameObject;
-                //GameObject Pages = iObj.viewObject.gameObject;
-                //Debug.Log($"Analysing Objects Named -> {Pages.name}");
                 iObj.theHitObj = null;
                 iObj.actObj = null;
-                /**
-                    foreach (GameObject chilObject in Pages.gameObject.transform)
-                    {
-                        if(chilObject.name == "Papers")
-                        {
-                            Destroy(chilObject.gameObject, 2.5f);
-                        }
-                    }
-                **/
                 Destroy(fl.gameObject);
             }
         }
