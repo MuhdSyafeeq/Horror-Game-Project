@@ -60,7 +60,11 @@ public class ActiveKeysMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
             GetComponent<PlayerMovement>().speed *= speedModifier;
-            anim.SetTrigger("inputShift");
+            if(anim.GetFloat("inputH") != 0 && 
+                anim.GetFloat("inputV") != 0)
+            {
+                anim.SetTrigger("inputShift");
+            }
         }
         if (Input.GetKeyUp(KeyCode.LeftShift)) {
             GetComponent<PlayerMovement>().speed /= speedModifier;

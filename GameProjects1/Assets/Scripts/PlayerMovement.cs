@@ -22,8 +22,8 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHeight = 3f;
 
     // Data Test Areas
-    public float HorizontalF;
-    public float VerticalF;
+    //public float HorizontalF;
+    //public float VerticalF;
 
     // Update is called once per frame
     void Update()
