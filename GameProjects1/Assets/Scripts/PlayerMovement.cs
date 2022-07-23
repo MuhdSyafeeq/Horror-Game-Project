@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Character Controller")]
+    public AnimationCharacter ac;
     public CharacterController controller;
     public float speed = 5f;
 
-    //Gravity Implementation Variable
+    [Space(5)]
+    [Header("Gravity Physics")]
     public float gravity = -9.81f;
     Vector3 velocity;
     public Transform groundCheck;
@@ -15,11 +18,15 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
     bool isGrounded;
 
-    // Animation
-    public Animator anim;
-
-    //Jump Implementation Variable
+    [Space(5)]
+    [Header("Jump Physics")]
     public float jumpHeight = 3f;
+
+    [Space(5)]
+    [Header("Audio")]
+    public AudioSource audio;
+    public AudioClip audioRun;
+    public AudioClip audioWalk;
 
     // Data Test Areas
     //public float HorizontalF;
@@ -33,13 +40,10 @@ public class PlayerMovement : MonoBehaviour
             // Check ground
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
             if (isGrounded && velocity.y < 0) { velocity.y = -2f; }
-
+            
             // Move Inputs
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
-
-            anim.SetFloat("inputH", Mathf.Abs(x));
-            anim.SetFloat("inputV", Mathf.Abs(z));
 
             Vector3 move = transform.right * x + transform.forward * z;
             controller.Move(move * speed * Time.deltaTime);
@@ -53,6 +57,22 @@ public class PlayerMovement : MonoBehaviour
             //Gravity Method
             if (!isGrounded) { velocity.y += gravity * Time.deltaTime; }
             controller.Move(velocity * Time.deltaTime);
+
+            if( isGrounded == true && audio.isPlaying == false)
+            {
+                if( ((ac.velocityX > 0.0f && ac.velocityX  < 0.55f) || (ac.velocityX  < 0.0f && ac.velocityX  > -0.55f)) 
+                    || ((ac.velocityZ > 0.0f && ac.velocityZ < 0.55f) || (ac.velocityZ < 0.0f && ac.velocityZ > -0.55f)) )
+                {
+                    audio.clip = audioWalk;
+                    audio.Play();
+                }
+                else if( ((ac.velocityX  > 0.55f && ac.velocityX  < 2.05f) || (ac.velocityX  < 0.0f && ac.velocityX  > -2.05f))
+                    || ((ac.velocityZ > 0.55f && ac.velocityZ < 2.05f) || (ac.velocityZ < 0.0f && ac.velocityZ > -2.05f)) )
+                {
+                    audio.clip = audioRun;
+                    audio.Play();
+                }
+            }
         }
     }
 }

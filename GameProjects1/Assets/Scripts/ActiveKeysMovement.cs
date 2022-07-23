@@ -7,7 +7,7 @@ public class ActiveKeysMovement : MonoBehaviour
     [Header("Player Settings")]
     [SerializeField]
     public GameObject playerHand;
-    public float speedModifier = 1.2f;
+    public float speedModifier = 2.5f;
     //public gameManager gm;
 
     [Header("Character Settings")]
@@ -60,15 +60,9 @@ public class ActiveKeysMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
             GetComponent<PlayerMovement>().speed *= speedModifier;
-            if(anim.GetFloat("inputH") != 0 && 
-                anim.GetFloat("inputV") != 0)
-            {
-                anim.SetTrigger("inputShift");
-            }
         }
         if (Input.GetKeyUp(KeyCode.LeftShift)) {
             GetComponent<PlayerMovement>().speed /= speedModifier;
-            anim.SetTrigger("inputShift");
         }
 
         if (Input.GetKeyDown(KeyCode.LeftControl)) { Crouching(); }
