@@ -6,7 +6,7 @@ public class randomSpawn : MonoBehaviour
     public List<Transform> location;
 
     // Start is called before the first frame update
-    void Start()
+    void awake()
     {
         if(location.Count == 0 || location == null)
         {
