@@ -63,7 +63,7 @@ public class InteractionObjects : MonoBehaviour
     private void setupGui()
     {
         guiStyle = new GUIStyle();
-        guiStyle.fontSize = 16;
+        guiStyle.fontSize = 18;
         guiStyle.fontStyle = FontStyle.Bold;
         guiStyle.normal.textColor = Color.white;
         msg = "Press E to Interact";

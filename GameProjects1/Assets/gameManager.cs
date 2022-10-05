@@ -33,6 +33,7 @@ public class gameManager : MonoBehaviour
     public List<AudioSource> soundGroup;
 
     public bool isPaused = false;
+    public bool isViewArea = false;
     public int missingparts = 0;
 
     public AudioMixer auMix;

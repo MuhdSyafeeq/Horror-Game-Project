@@ -184,6 +184,19 @@ public class ActionObjects : MonoBehaviour
             }
         }
 
+        else if (iObj.theHitObj.name == "OminousBed")
+        {
+            currMsg = "Press E to look under the Bed";
+            if(refObjects != null)
+            {
+
+            }
+            else
+            {
+                Debug.Log("NULL: No Object Referenced");
+            }
+        }
+
         else
         {
             if(refObjects != null)
