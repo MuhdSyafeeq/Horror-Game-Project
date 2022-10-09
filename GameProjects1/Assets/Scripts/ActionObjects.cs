@@ -186,10 +186,64 @@ public class ActionObjects : MonoBehaviour
 
         else if (iObj.theHitObj.name == "OminousBed")
         {
-            currMsg = "Press E to look under the Bed";
-            if(refObjects != null)
+            //currMsg = "Press E to look under the Bed";
+            if(refObjects != null && connectedObj.Count != 0)
             {
+                if(gameManager.Instance.isViewArea == false)
+                {
+                    gameManager.Instance.lastHitObj = iObj.theHitObj;
+                    gameManager.Instance.iOObj = iObj;
 
+                    Debug.Log($"lastHitObj from Manager -> {gameManager.Instance.lastHitObj}");
+                    Debug.Log($"iOObj from Manager -> {gameManager.Instance.iOObj}");
+
+                    gameManager.Instance.isViewArea = true;
+                    //refObjects.GetComponent<MouseLook>().enabled = false;
+                    currMsg = "Press E to leave the Bed";
+
+                    foreach (GameObject @object in connectedObj)
+                    {
+                        if (@object.name == "ViewFrontBed")
+                        {
+                            refObjects.GetComponent<CameraOverride>().CameraOvride = @object.transform;
+                            //break;
+                        }
+
+                        if (@object.name == "FirstPersonPlayer")
+                        {
+                            @object.GetComponent<PlayerMovement>().enabled = false;
+                            @object.GetComponent<ActiveKeysMovement>().enabled = false;
+                            //@object.SetActive(false);
+                        }
+                        
+                        if(@object.name == "Main_Character")
+                        {
+                            @object.SetActive(false);
+                        }
+                    }
+                }
+                else
+                {
+                    currMsg = "Press E to look under the Bed";
+                    refObjects.GetComponent<CameraOverride>().CameraOvride = refObjects.GetComponent<CameraOverride>().SelfPos;
+                    gameManager.Instance.isViewArea = false;
+                    foreach (GameObject @object in connectedObj)
+                    {
+                        if (@object.name == "FirstPersonPlayer")
+                        {
+                            //refObjects.GetComponent<CameraOverride>().CameraOvride  = @object.transform;
+                            @object.GetComponent<PlayerMovement>().enabled          = true;
+                            @object.GetComponent<ActiveKeysMovement>().enabled      = true;
+                            //@object.SetActive(true);
+                        }
+
+                        if (@object.name == "Main_Character")
+                        {
+                            @object.SetActive(true);
+                        }
+                    }
+                }
+                
             }
             else
             {

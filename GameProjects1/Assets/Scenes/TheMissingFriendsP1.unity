@@ -1845,7 +1845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 4185e654376505d45a457918a6b8c561, type: 3}
       propertyPath: m_Name
-      value: Bed_
+      value: OminousBed
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4185e654376505d45a457918a6b8c561, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1908,6 +1908,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: f9a7109c3c9f3f2499683dd129afbd3a, type: 3}
+--- !u!114 &55950284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55950282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47e12db44b5fda4c9453acfaecb05a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refObjects: {fileID: 2072535861}
+  connectedObj:
+  - {fileID: 1503425538}
+  - {fileID: 2072535860}
+  - {fileID: 1488393042}
+  linkedInteraction: {fileID: 0}
+  iObj: {fileID: 1951167663}
+  currMsg: Press E to Interact
+  isHoldingPaper: 0
 --- !u!1 &57458173 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 6deba5fbc597b1e49a03706cd3b512a3,
@@ -62117,6 +62138,8 @@ MonoBehaviour:
   isPaused: 0
   isViewArea: 0
   missingparts: 0
+  iOObj: {fileID: 0}
+  lastHitObj: {fileID: 0}
   auMix: {fileID: 24100000, guid: ccae6a3e99b707741b28a4dad3d4e77d, type: 2}
   volumeInput: {fileID: 1518469709}
   volumeSlider: {fileID: 1799486745}
@@ -74255,6 +74278,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 7d6af4c92270e5744825dd3d70eded22, type: 3}
+--- !u!1 &1488393042 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9061459145017691847, guid: f0f6c78e5263c9c4db481d793eb22d3a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2072535859}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1488576231 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 5e262600d28185c49824d64f5cbfcc46,
@@ -95916,6 +95945,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.98
       objectReference: {fileID: 0}
+    - target: {fileID: 9061459145017691847, guid: f0f6c78e5263c9c4db481d793eb22d3a,
+        type: 3}
+      propertyPath: m_Name
+      value: Main_Character
+      objectReference: {fileID: 0}
     - target: {fileID: 9061459145017691863, guid: f0f6c78e5263c9c4db481d793eb22d3a,
         type: 3}
       propertyPath: m_IsActive
@@ -95974,6 +96008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd357ca975bb94c499f3a90829ae864b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelfPos: {fileID: 0}
   CameraOvride: {fileID: 0}
   smoothSpeed: 0.125
   offset: {x: 0, y: 0, z: 0}

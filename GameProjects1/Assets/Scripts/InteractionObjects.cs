@@ -55,6 +55,10 @@ public class InteractionObjects : MonoBehaviour
         {
             actObj.InteractUse();
         }
+        else if(Input.GetKeyDown(KeyCode.E) && gameManager.Instance.isViewArea == true)
+        {
+            gameManager.Instance.lastHitObj.GetComponent<ActionObjects>().InteractUse();
+        }
     }
 
     #region GUI Config

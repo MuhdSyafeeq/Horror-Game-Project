@@ -35,6 +35,8 @@ public class gameManager : MonoBehaviour
     public bool isPaused = false;
     public bool isViewArea = false;
     public int missingparts = 0;
+    public InteractionObjects iOObj;
+    public GameObject lastHitObj;
 
     public AudioMixer auMix;
 

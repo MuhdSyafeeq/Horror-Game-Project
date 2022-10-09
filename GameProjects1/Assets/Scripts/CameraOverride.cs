@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class CameraOverride : MonoBehaviour
 {
-    [SerializeField] private Transform CameraOvride;
+    [SerializeField] public Transform SelfPos;
+    [SerializeField] public Transform CameraOvride;
 
     [SerializeField] private float smoothSpeed = .125f;
     [SerializeField] private Vector3 offset;
+
+    private void Start()
+    {
+        SelfPos = this.transform;
+    }
 
     // Update is called once per frame
     void FixedUpdate()
