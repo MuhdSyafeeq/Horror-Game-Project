@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScreen.unity
     guid: 2630eb97d899d8847bdd25c61dd2c178
   - enabled: 1
-    path: Assets/Scenes/TheLevels_L1.unity
+    path: Assets/Scenes/TheMissingFriendsP1.unity
     guid: 702a06c78c3511a4f88f68bae0452ed5
   m_configObjects: {}

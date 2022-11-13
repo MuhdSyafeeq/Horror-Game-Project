@@ -32,12 +32,15 @@ public class gameManager : MonoBehaviour
     public List<GameObject> gameObjects;
     public List<AudioSource> soundGroup;
 
-    public bool isPaused = false;
-    public bool isViewArea = false;
     public int missingparts = 0;
-    public InteractionObjects iOObj;
-    public GameObject lastHitObj;
 
+    public bool isPaused = false;
+
+    public bool isViewArea = false;
+    public bool isResetView = false;
+
+    public GameObject lastHitObj;
+    //public Transform lastCamView;
     public AudioMixer auMix;
 
     public TMP_InputField volumeInput;
@@ -148,9 +151,9 @@ public class gameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         isPaused = false;
 
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         //foreach (AudioSource audio in soundGroup) { audio.UnPause(); }
-        Debug.Log($"[AFTER RESET] Game System is Paused? -> { isPaused }");
+        Debug.Log($"[Starting...] Game System is Paused? -> { isPaused }");
     }
 
     public void changeVolume(float volume)
