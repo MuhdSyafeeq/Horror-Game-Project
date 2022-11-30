@@ -1329,7 +1329,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &34734237
@@ -1537,7 +1537,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39292648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.66, y: -0.13, z: -32.24}
+  m_LocalPosition: {x: 8.66, y: 0.8, z: -32.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -2021,7 +2021,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &55950280
@@ -2351,7 +2351,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &62572698
@@ -2463,6 +2463,36 @@ MonoBehaviour:
   iObj: {fileID: 1951167663}
   currMsg: Press E to interact with Lamps
   isHoldingPaper: 0
+--- !u!1 &64729613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 64729614}
+  m_Layer: 2
+  m_Name: Location_Random
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &64729614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64729613}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7, y: 3.72, z: 1.24}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1336248286}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &64776525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3030,7 +3060,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &81753183 stripped
@@ -3630,7 +3660,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104285173}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.18, y: -0.7300004, z: -34.6}
+  m_LocalPosition: {x: 16.18, y: 0.19999957, z: -34.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -4505,7 +4535,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119303711}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.76, y: 2.095, z: -19.25}
+  m_LocalPosition: {x: 17.76, y: 3.3, z: -19.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1026069727}
@@ -5492,7 +5522,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153264528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.31, y: -0.4, z: -25.7}
+  m_LocalPosition: {x: -0.31, y: 0.53, z: -25.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -5722,7 +5752,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &164225475
@@ -6582,7 +6612,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &185761632
@@ -6715,7 +6745,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186798067}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.8, y: -1.25, z: -9.13}
+  m_LocalPosition: {x: -11.8, y: -0.04500258, z: -9.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1026069727}
@@ -8021,7 +8051,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213718508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.31, y: -0.4, z: -30.17}
+  m_LocalPosition: {x: -0.31, y: 0.53, z: -30.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -8158,7 +8188,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &219903211
@@ -9504,7 +9534,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &262522359
@@ -9633,7 +9663,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265301067}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.480002, y: -3.33, z: -14.95}
+  m_LocalPosition: {x: 2.480002, y: -2.4, z: -14.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -9714,7 +9744,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276143349}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.31, y: -0.4, z: -31.7}
+  m_LocalPosition: {x: -0.31, y: 0.53, z: -31.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -10219,7 +10249,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289539047}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03, y: 0, z: -6.28}
+  m_LocalPosition: {x: 0.03, y: 0.92999995, z: -6.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -10300,7 +10330,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289935077}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.61, y: -0.368, z: -18.59}
+  m_LocalPosition: {x: -3.61, y: 0.8369974, z: -18.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1026069727}
@@ -10569,7 +10599,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &294273181
@@ -10706,7 +10736,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295534939}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.61, y: -0.368, z: -15.479998}
+  m_LocalPosition: {x: -3.61, y: 0.8369974, z: -15.479998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1026069727}
@@ -11592,7 +11622,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &323291531
@@ -11781,7 +11811,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 336081356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.969, z: 2.49}
+  m_LocalPosition: {x: 0.83, y: 0.97, z: 2.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3217798}
@@ -13379,7 +13409,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &369203466
@@ -14713,7 +14743,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &393458349
@@ -14733,7 +14763,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400106, guid: aa723b44260e74040869a722c46a85c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.568
+      value: -4.514
       objectReference: {fileID: 0}
     - target: {fileID: 400106, guid: aa723b44260e74040869a722c46a85c5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15136,7 +15166,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405454537}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.66, y: -0.13, z: -34.41}
+  m_LocalPosition: {x: 8.66, y: 0.79999995, z: -34.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -16084,7 +16114,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &445036679
@@ -16740,7 +16770,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &458598415
@@ -16990,6 +17020,36 @@ Transform:
   - {fileID: 2041509450}
   m_Father: {fileID: 925474148}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &465968495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 465968496}
+  m_Layer: 2
+  m_Name: Location_Random
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &465968496
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465968495}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7, y: 12.2, z: -1.79}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1336248286}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &466365584
 GameObject:
@@ -21981,7 +22041,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475214388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.102, z: 0}
+  m_LocalPosition: {x: 0.83, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3217798}
@@ -22230,7 +22290,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493267812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.31, y: -0.4, z: -38.58}
+  m_LocalPosition: {x: -0.31, y: 0.53, z: -38.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -22260,7 +22320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 496940486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.887, y: 1.908, z: -11.9}
+  m_LocalPosition: {x: 17.887, y: 3.1129975, z: -11.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1026069727}
@@ -22469,7 +22529,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500897784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.51, y: 1.582, z: 12.8}
+  m_LocalPosition: {x: 18.51, y: 2.512, z: 12.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -22994,7 +23054,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &514613730
@@ -23508,7 +23568,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &519683616
@@ -24018,7 +24078,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531936087}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.14, y: -0.36799943, z: -14.069998}
+  m_LocalPosition: {x: -5.14, y: 0.836998, z: -14.069998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1026069727}
@@ -24097,7 +24157,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &539033658
@@ -29166,7 +29226,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558410859}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.14, y: -0.36799943, z: -17.18}
+  m_LocalPosition: {x: -5.14, y: 0.836998, z: -17.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1026069727}
@@ -29282,7 +29342,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &558694902
@@ -29634,7 +29694,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &563468935
@@ -31501,7 +31561,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &613444324
@@ -31944,7 +32004,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &619521233 stripped
@@ -37341,7 +37401,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &636512626
@@ -37596,7 +37656,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 640901059}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.17, z: 0}
+  m_LocalPosition: {x: 0, y: 1.3749974, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1026069727}
@@ -37673,7 +37733,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 642900744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.69, y: -0.36799943, z: -17.13}
+  m_LocalPosition: {x: -3.69, y: 0.836998, z: -17.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1026069727}
@@ -38334,7 +38394,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &654817459
@@ -38361,7 +38421,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654817459}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.18, y: -0.7300004, z: -33.3}
+  m_LocalPosition: {x: 16.18, y: 0.19999957, z: -33.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -38440,7 +38500,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &659776332 stripped
@@ -39200,7 +39260,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &681646141
@@ -39900,7 +39960,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &701141834 stripped
@@ -41738,7 +41798,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741532516}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.14, y: -0.36799943, z: -11.09}
+  m_LocalPosition: {x: -5.14, y: 0.836998, z: -11.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1026069727}
@@ -41766,7 +41826,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &742678916 stripped
@@ -42009,7 +42069,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &746905671
@@ -42223,7 +42283,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &749670677
@@ -42386,7 +42446,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &752243463
@@ -42553,7 +42613,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &756549988 stripped
@@ -43233,6 +43293,36 @@ MonoBehaviour:
   m_Center: {x: 0, y: 1, z: 0}
   m_Area: 0
   m_AffectedAgents: ffffffff
+--- !u!1 &780727465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 780727466}
+  m_Layer: 2
+  m_Name: Location_Random
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &780727466
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780727465}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7, y: 5.75, z: -1.79}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1336248286}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &786203208
 GameObject:
   m_ObjectHideFlags: 0
@@ -43380,7 +43470,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &788120783
@@ -43969,7 +44059,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &798168609
@@ -44459,7 +44549,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &806371671
@@ -45485,7 +45575,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839543857}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.760004, y: -0.12999988, z: -24.030006}
+  m_LocalPosition: {x: 8.760004, y: 0.8000001, z: -24.030006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -45851,7 +45941,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858142945}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.69, y: -0.36799943, z: -11.040003}
+  m_LocalPosition: {x: -3.69, y: 0.836998, z: -11.040003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1026069727}
@@ -46947,7 +47037,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &895045960
@@ -47427,7 +47517,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &901019270 stripped
@@ -48529,7 +48619,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &925474147
@@ -49348,6 +49438,66 @@ Transform:
   m_Father: {fileID: 29571754}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &952617294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 952617295}
+  m_Layer: 2
+  m_Name: Location_Random
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &952617295
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952617294}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7, y: 10.12, z: 1.21}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1336248286}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &954272435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 954272436}
+  m_Layer: 2
+  m_Name: Location_Random
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &954272436
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954272435}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1336248286}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &954834452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49949,7 +50099,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &977111953
@@ -50135,7 +50285,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &980808530
@@ -50568,7 +50718,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &992378575
@@ -50731,7 +50881,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &998862168
@@ -51292,7 +51442,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015037930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3799982, y: -0.4000002, z: -21.980003}
+  m_LocalPosition: {x: -0.3799982, y: 0.52999973, z: -21.980003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -52929,7 +53079,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &1044768580
@@ -53056,7 +53206,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1046567706
@@ -53912,7 +54062,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1067853936 stripped
@@ -54564,7 +54714,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077303578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.69, y: -0.36799943, z: -14.02}
+  m_LocalPosition: {x: -3.69, y: 0.836998, z: -14.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1026069727}
@@ -54706,7 +54856,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &1081662692
@@ -55013,7 +55163,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1087603359 stripped
@@ -56125,7 +56275,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1106964982 stripped
@@ -56261,7 +56411,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &1110405186
@@ -56390,7 +56540,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115504945}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.13, y: -0.36799943, z: -12.48}
+  m_LocalPosition: {x: -5.13, y: 0.836998, z: -12.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1026069727}
@@ -56630,7 +56780,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1129827847 stripped
@@ -57279,7 +57429,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153060336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.61, y: -0.368, z: -12.5}
+  m_LocalPosition: {x: -3.61, y: 0.8369974, z: -12.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1026069727}
@@ -57786,7 +57936,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1167349187 stripped
@@ -58400,7 +58550,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186212785}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.48, y: -3.3299997, z: -12.690005}
+  m_LocalPosition: {x: 2.48, y: -2.3999996, z: -12.690005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -58521,7 +58671,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1189370463}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.18, y: -0.7300004, z: -37}
+  m_LocalPosition: {x: 16.18, y: 0.19999957, z: -37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -58764,7 +58914,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1192825608
@@ -59175,6 +59325,36 @@ Transform:
   m_Father: {fileID: 925474148}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1208681114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1208681115}
+  m_Layer: 2
+  m_Name: Location_Random
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1208681115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208681114}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7, y: 2.76, z: -1.79}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1336248286}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1209277286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59369,7 +59549,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1212315690 stripped
@@ -61181,7 +61361,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &1259505633
@@ -61405,7 +61585,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &1263196672
@@ -61577,7 +61757,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269728738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.18, y: -0.7300004, z: -36.12}
+  m_LocalPosition: {x: 16.18, y: 0.19999957, z: -36.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -62296,7 +62476,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1287638729
@@ -68304,7 +68484,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &1327230309
@@ -68538,7 +68718,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328275379}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.13, y: -0.36799943, z: -18.57}
+  m_LocalPosition: {x: -5.13, y: 0.836998, z: -18.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1026069727}
@@ -68708,7 +68888,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1328800685 stripped
@@ -68733,7 +68913,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1328922769
@@ -68845,7 +69025,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &1329738146
@@ -69649,7 +69829,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1344257113
@@ -70397,7 +70577,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1361388462
@@ -71153,7 +71333,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &1388184790
@@ -72014,7 +72194,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1407309257
@@ -74241,7 +74421,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474344476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.18, y: -0.7300004, z: -31.81}
+  m_LocalPosition: {x: 16.18, y: 0.19999957, z: -31.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -74356,7 +74536,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &1475750135
@@ -75511,7 +75691,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1508929068
@@ -75538,7 +75718,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508929068}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.31, y: -0.4, z: -33.09}
+  m_LocalPosition: {x: -0.31, y: 0.53, z: -33.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -75916,7 +76096,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &1515831305
@@ -77691,7 +77871,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557436598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.13, y: -0.36799943, z: -15.459997}
+  m_LocalPosition: {x: -5.13, y: 0.836998, z: -15.459997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1026069727}
@@ -77857,7 +78037,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1559674717
@@ -78025,7 +78205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563329724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3799982, y: -0.4000002, z: -23.123}
+  m_LocalPosition: {x: -0.3799982, y: 0.52999973, z: -23.123}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -78140,7 +78320,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &1566390968
@@ -79610,7 +79790,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606309628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.66, y: -0.13, z: -31.17}
+  m_LocalPosition: {x: 8.66, y: 0.79999995, z: -31.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -79695,7 +79875,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606703279}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.660004, y: -0.12999988, z: -26.9}
+  m_LocalPosition: {x: 8.660004, y: 0.8000001, z: -26.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -81499,7 +81679,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &1666218327
@@ -82564,7 +82744,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1692966734
@@ -83984,7 +84164,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1719723815
@@ -84333,7 +84513,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722676888}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.102, z: 1.277}
+  m_LocalPosition: {x: 0.83, y: -0.1, z: 1.277}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3217798}
@@ -84844,7 +85024,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &1743384545
@@ -85914,6 +86094,36 @@ Transform:
   m_Father: {fileID: 29571754}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1776245503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1776245504}
+  m_Layer: 2
+  m_Name: Location_Random
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1776245504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776245503}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7, y: 9.7, z: -1.79}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1336248286}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1776380677
 GameObject:
   m_ObjectHideFlags: 0
@@ -86213,7 +86423,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782816182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.660004, y: -0.12999988, z: -25.46}
+  m_LocalPosition: {x: 8.660004, y: 0.8000001, z: -25.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -87289,7 +87499,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817989920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.91, y: -1.04, z: -23.08}
+  m_LocalPosition: {x: -11.91, y: 0.16499746, z: -23.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1026069727}
@@ -87763,7 +87973,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1833143573}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.18, y: -0.73, z: -37}
+  m_LocalPosition: {x: 16.18, y: 0.19999993, z: -37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -88945,6 +89155,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1868408526}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1869221836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1869221837}
+  m_Layer: 2
+  m_Name: Location_Random
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1869221837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869221836}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7, y: 1.9, z: 1.21}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1336248286}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1870149450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91068,7 +91308,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1909694099 stripped
@@ -91433,7 +91673,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921154647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.31, y: -0.4, z: -24.435}
+  m_LocalPosition: {x: -0.31, y: 0.53, z: -24.435}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1512368537}
@@ -91629,7 +91869,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1934723832 stripped
@@ -91944,7 +92184,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &1947391466
@@ -92592,7 +92832,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &1965629584 stripped
@@ -92652,6 +92892,36 @@ Transform:
   - {fileID: 109053196}
   m_Father: {fileID: 1846313601}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1966394594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1966394595}
+  m_Layer: 2
+  m_Name: Location_Random
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1966394595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966394594}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7, y: 11.49, z: 1.21}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1336248286}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1967597079
 PrefabInstance:
@@ -93278,6 +93548,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1989065077}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1990591244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1990591245}
+  m_Layer: 2
+  m_Name: Location_Random
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1990591245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990591244}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7, y: 7.18, z: 1.21}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1336248286}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1990823021 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: cd35d8a4ee52c8c4baa4b5faf7063aa1,
@@ -94222,7 +94522,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &2015854577 stripped
@@ -94775,7 +95075,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &2031630511
@@ -95657,15 +95957,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 491553f8c15876841a3444d338a30f74, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2700005
+      value: -1.575
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 491553f8c15876841a3444d338a30f74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0735002
+      value: 15.35
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 491553f8c15876841a3444d338a30f74, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.26
+      value: -7.98
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 491553f8c15876841a3444d338a30f74, type: 3}
       propertyPath: m_LocalRotation.x
@@ -95915,7 +96215,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &2061116531
@@ -96027,7 +96327,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &2062222965
@@ -96955,7 +97255,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &2078958867
@@ -97271,7 +97571,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087232281}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.102, z: 2.49}
+  m_LocalPosition: {x: 0.83, y: -0.1, z: 2.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3217798}
@@ -98167,7 +98467,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &2115275192 stripped
@@ -103529,7 +103829,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1 &2123730759 stripped
@@ -103801,7 +104101,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &2134694517
@@ -104474,7 +104774,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  visionrange: {fileID: 551151414}
+  playerViewSphere: {fileID: 551151414}
   playerSanity: {fileID: 1456722142}
   powerLight: {fileID: 0}
 --- !u!1001 &9108295386381337364

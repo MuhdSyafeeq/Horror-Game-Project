@@ -10,6 +10,8 @@ public class MouseLook : MonoBehaviour
 
     public Transform playerBody;
 
+    public bool isZoom = false;
+
     float xRotation = 0f;
 
     // Start is called before the first frame update
@@ -45,16 +47,38 @@ public class MouseLook : MonoBehaviour
     {
         if(gameManager.Instance.isPaused != true)
         {
-            float mouseX = Input.GetAxis("Mouse X") * mouseSensitiviy * Time.deltaTime;
-            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitiviy * Time.deltaTime;
+            #region Mouse Buttons (If Any)
+            if (isZoom && GetComponent<Camera>().fieldOfView > 30)
+            {
+                GetComponent<Camera>().fieldOfView--;
+            }
+            else if(!isZoom)
+            {
+                GetComponent<Camera>().fieldOfView = 60;
+            }
 
-            // Look Left or Right (Side-to-Side)
-            playerBody.Rotate(Vector3.up * mouseX);
+            if(!isZoom && Input.GetMouseButtonDown(1))
+            {
+                isZoom = true;
+            }
+            else if(isZoom && Input.GetMouseButtonUp(1))
+            {
+                isZoom = false;
+            }
+            #endregion
 
-            // Look Up or Down (Clamping Method)
-            xRotation -= mouseY;
-            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            #region Mouse Looking Surround
+                float mouseX = Input.GetAxis("Mouse X") * mouseSensitiviy * Time.deltaTime;
+                float mouseY = Input.GetAxis("Mouse Y") * mouseSensitiviy * Time.deltaTime;
+
+                // Look Left or Right (Side-to-Side)
+                playerBody.Rotate(Vector3.up * mouseX);
+
+                // Look Up or Down (Clamping Method)
+                xRotation -= mouseY;
+                xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+                transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            #endregion
         }
     }
 }

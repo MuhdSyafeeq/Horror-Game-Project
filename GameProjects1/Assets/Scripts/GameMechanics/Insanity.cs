@@ -43,11 +43,5 @@ public class Insanity : MonoBehaviour
             gameManager.Instance.isPaused = true;
             this.Invoke(() => gameManager.Instance.GameOver(), 1.5f);
         }
-
-        //if Less than 90%, Start Reduce Pitch
-        //if(slider.value <= (0.9f * slider.maxValue))
-        //{
-        //    float tempValue = slider.value;
-        //}
     }
 }

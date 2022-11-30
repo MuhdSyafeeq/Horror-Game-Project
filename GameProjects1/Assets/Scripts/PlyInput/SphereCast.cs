@@ -13,7 +13,7 @@ public class SphereCast : MonoBehaviour
 
     public float currentHitDistance;
 
-    private float fearMult = .3f;
+    public float fearMult = .3f;
     private float TimeLook_Ent = 0f;
     public Insanity playerSanity;
 

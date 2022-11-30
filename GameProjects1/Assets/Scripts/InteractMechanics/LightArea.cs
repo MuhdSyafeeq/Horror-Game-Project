@@ -9,10 +9,9 @@ public class LightArea : MonoBehaviour
     public LayerMask layerMask;
 
     private float calmDuration = 3f;
-    private float fearMult = .3f;
     private float TimeAt_Light = 0f;
 
-    public SphereCast visionrange;
+    public SphereCast playerViewSphere;
     public Insanity playerSanity;
     public Light powerLight;
 
@@ -35,14 +34,13 @@ public class LightArea : MonoBehaviour
         {
             if (powerLight.enabled == true)
             {
-                //visionrange.maxDistance = 10.5f;
                 isNearPlayer = Physics.CheckSphere(this.transform.position, myRadius, layerMask);
                 if (isNearPlayer == true)
                 {
                     //Debug.Log("Hit An Entity");
                     if (playerSanity.slider.value <= playerSanity.slider.maxValue)
                     {
-                        playerSanity.regainSanity(((calmDuration * .75f + TimeAt_Light) * fearMult) * Time.deltaTime);
+                        playerSanity.regainSanity(((calmDuration * .75f + TimeAt_Light) * playerViewSphere.fearMult) * Time.deltaTime);
                         
                         if (calmDuration > 0)
                         {
@@ -58,7 +56,6 @@ public class LightArea : MonoBehaviour
                 {
                     TimeAt_Light = 0f;
                     calmDuration = 3f;
-                    //visionrange.maxDistance = 1.1f;
                 }
             }
         }
