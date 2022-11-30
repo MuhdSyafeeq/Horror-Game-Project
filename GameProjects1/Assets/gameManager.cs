@@ -151,9 +151,9 @@ public class gameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         isPaused = false;
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         //foreach (AudioSource audio in soundGroup) { audio.UnPause(); }
-        Debug.Log($"[Starting...] Game System is Paused? -> { isPaused }");
+        //Debug.Log($"[Starting...] Game System is Paused? -> { isPaused }");
     }
 
     public void changeVolume(float volume)

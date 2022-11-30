@@ -63,14 +63,21 @@ public class PlayerMovement : MonoBehaviour
                 if( ((ac.velocityX > 0.0f && ac.velocityX  < 0.55f) || (ac.velocityX  < 0.0f && ac.velocityX  > -0.55f)) 
                     || ((ac.velocityZ > 0.0f && ac.velocityZ < 0.55f) || (ac.velocityZ < 0.0f && ac.velocityZ > -0.55f)) )
                 {
-                    audio.clip = audioWalk;
-                    audio.Play();
+                    if(audioRun != null && audioWalk != null)
+                    {
+                        audio.clip = audioWalk;
+                        audio.Play();
+                    }
+                    
                 }
                 else if( ((ac.velocityX  > 0.55f && ac.velocityX  < 2.05f) || (ac.velocityX  < 0.0f && ac.velocityX  > -2.05f))
                     || ((ac.velocityZ > 0.55f && ac.velocityZ < 2.05f) || (ac.velocityZ < 0.0f && ac.velocityZ > -2.05f)) )
                 {
-                    audio.clip = audioRun;
-                    audio.Play();
+                    if (audioRun != null && audioWalk != null)
+                    {
+                        audio.clip = audioRun;
+                        audio.Play();
+                    }
                 }
             }
         }
