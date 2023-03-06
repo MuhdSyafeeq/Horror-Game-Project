@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 
 public class gameManager : MonoBehaviour
 {
+    #region Singular-Instance
     public static gameManager Instance { get; private set; }
 
     //If a script will be using the singleton in its awake method, make sure the manager is first to execute with the Script Execution Order project settings
@@ -19,6 +20,13 @@ public class gameManager : MonoBehaviour
         if (Instance != null) //this depend how you want to handle multiple managers (like when switching/adding scenes) but this way should cover common use cases
             Destroy(Instance);
         Instance = this;
+
+        SoundSystem = GameObject.FindSceneObjectsOfType(typeof(AudioSource)) as AudioSource[];
+
+        foreach(AudioSource aSystem in SoundSystem)
+        {
+            soundGroup.Add(aSystem);
+        }
     }
 
     void OnDestroy()
@@ -28,9 +36,11 @@ public class gameManager : MonoBehaviour
             Instance = null;
         }
     }
+    #endregion
 
     public List<GameObject> gameObjects;
     public List<AudioSource> soundGroup;
+    AudioSource[] SoundSystem;
 
     public int missingparts = 0;
 
@@ -58,12 +68,12 @@ public class gameManager : MonoBehaviour
 
         GameObject pausePanel = gameObjects.Where(obj => obj.name == "Ui-Pause-Panel").SingleOrDefault();
         GameObject crosshairPanel = gameObjects.Where(obj => obj.name == "Crosshair").SingleOrDefault();
-        /*
+        
         foreach(AudioSource audio in soundGroup)
         {
             audio.Pause();
         }
-        */
+        
         pausePanel.SetActive(true);
         crosshairPanel.SetActive(false);
 
@@ -114,12 +124,12 @@ public class gameManager : MonoBehaviour
         GameObject pausePanel = gameObjects.Where(obj => obj.name == "Ui-Pause-Panel").SingleOrDefault();
         GameObject crosshairPanel = gameObjects.Where(obj => obj.name == "Crosshair").SingleOrDefault();
         GameObject settingPanel = gameObjects.Where(obj => obj.name == "Setting-Panel").SingleOrDefault();
-        /*
+        
         foreach (AudioSource audio in soundGroup)
         {
             audio.UnPause();
         }
-        */
+        
         pausePanel.SetActive(false);
         settingPanel.SetActive(false);
         crosshairPanel.SetActive(true);
@@ -151,6 +161,8 @@ public class gameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         isPaused = false;
 
+
+        
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         //foreach (AudioSource audio in soundGroup) { audio.UnPause(); }
         //Debug.Log($"[Starting...] Game System is Paused? -> { isPaused }");

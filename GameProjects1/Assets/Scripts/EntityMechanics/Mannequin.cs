@@ -33,6 +33,21 @@ public class Mannequin : MonoBehaviour
     public SkinnedMeshRenderer[] meshRendr;
     public MeshCollider[] meshColl;
 
+    [Header("GameOver Settings")]
+    [SerializeField]
+
+    #region Camera Object
+    public Camera playerCams;
+    public Camera deathCams;
+    #endregion
+
+    #region Body Changes
+    public GameObject MainBody;
+    public GameObject GameOverBody;
+    #endregion
+
+
+
     // Update is called once per frame
     void Update()
     {
@@ -92,6 +107,15 @@ public class Mannequin : MonoBehaviour
                         agent.isStopped = true;
                         //agent.enabled = false;
                         //agent.Stop();
+
+                    #region Change Camera
+                        playerCams.gameObject.SetActive(false);
+                        deathCams.gameObject.SetActive(true);
+
+                        MainBody.SetActive(false);
+                        GameOverBody.SetActive(true);
+                    #endregion
+
                         gameManager.Instance.isPaused = true;
                         this.Invoke(() => gameManager.Instance.GameOver(), 1.5f);
                     }

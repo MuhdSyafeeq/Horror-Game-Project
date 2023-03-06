@@ -21,12 +21,15 @@ public class randomSpawn : MonoBehaviour
                 }
 
                 int selection = Mathf.RoundToInt(Random.Range(0.0f, ((float)location.Count - 1.0f)));
+/*
+                #region Debug Logs
                 Debug.Log($"" +
                     $"<color=yellow>    Item { gameObject.name } selected index -></color>" +
                     $"<color=lightblue> { selection }</color>" +
                     $"<color=yellow>    out of </color>" +
                     $"<color=lightblue> { location.Count }</color>");
-
+                #endregion
+*/
                 this.transform.position = location[selection].position;
 
                 //Delete Other Datas
