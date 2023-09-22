@@ -6203,7 +6203,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 10
+  far clip plane: 5.07
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -9884,7 +9884,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1235490166}
         m_MethodName: changeVolume
         m_Mode: 0
         m_Arguments:

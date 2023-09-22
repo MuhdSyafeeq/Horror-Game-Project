@@ -43,6 +43,8 @@ public class gameManager : MonoBehaviour
     AudioSource[] SoundSystem;
 
     public int missingparts = 0;
+    public float dataSens = 0;
+    public float dataSoundVol = 0;
 
     public bool isPaused = false;
 
@@ -152,6 +154,7 @@ public class gameManager : MonoBehaviour
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         //foreach (AudioSource audio in soundGroup) { audio.UnPause(); }
+        SaveSystem.LoadData(this);
         Debug.Log($"[AFTER RESET] Game System is Paused? -> { isPaused }");
     }
 
@@ -182,6 +185,8 @@ public class gameManager : MonoBehaviour
             volumeInput.text = System.Math.Round(((float)(volume / 1) * 100), 3).ToString() + "%";
         }
         auMix.SetFloat("Volume", calc);
+        dataSoundVol = calc;
+        SaveSystem.SaveData(this);
     }
 
     public void changeVolume(string volume)
